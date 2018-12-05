@@ -9,4 +9,12 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+def create_store(name)
+  store = Store.create(name: name)
+  puts store.errors.details[:annual_revenue]
+  puts store.errors.details[:womens_apparel]
+  puts store.errors.details[:mens_apparel]
+end
+print "enter store name > "
+new_store = gets.chomp()
+create_store(new_store)
